@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/styles/Dashboard.scss';
 import ResultItem from '../resultItem/ResultItem';
 
@@ -84,6 +85,8 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-container">
+            <Link to="/search-report">Search Reports</Link>
+
             <form onSubmit={handleFileUpload}>
                 <input type="file" accept=".csv" onChange={(e) => setFile(e.target.files[0])} />
                 <button type="submit" disabled={isLoading}>Upload CSV</button>
