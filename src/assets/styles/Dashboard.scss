@@ -1,0 +1,48 @@
+.dashboard-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        input[type="file"] {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+
+    .results-container {
+        padding: 10px;
+        border-top: 1px solid #ddd;
+    }
+
+    .result-item {
+        margin-top: 10px;
+        padding: 10px;
+        background: white;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}
