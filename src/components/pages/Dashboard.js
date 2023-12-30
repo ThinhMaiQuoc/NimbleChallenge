@@ -10,6 +10,7 @@ const Dashboard = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [pollingIntervalId, setPollingIntervalId] = useState(null);
     const [pendingJobIds, setPendingJobIds] = useState([]);
+    const [keywords, setKeywords] = useState([]);
 
     const pendingJobIdsRef = useRef([]);
 
@@ -73,8 +74,12 @@ const Dashboard = () => {
 
             if (response.status === 200) {
                 const jobResults = response.data;
+
+                const keywords = jobResults.map(job => job.keyword);
                 const jobIds = jobResults.map(job => job.jobId);
                 setPendingJobIds(jobIds);
+                setKeywords(keywords)
+
                 const intervalId = setInterval(checkForNewResults, 5000);
                 setPollingIntervalId(intervalId);
             }
@@ -91,6 +96,15 @@ const Dashboard = () => {
                 <input type="file" accept=".csv" onChange={(e) => setFile(e.target.files[0])} />
                 <button type="submit" disabled={isLoading}>Upload CSV</button>
             </form>
+
+            <div className="keywords-list">
+                <h3>Uploaded Keywords</h3>
+                <ul>
+                    {keywords.map((keyword, index) => (
+                        <li key={index}>{keyword}</li>
+                    ))}
+                </ul>
+            </div>
 
             <div className="results-container">
                 {results.map((result, index) => (
