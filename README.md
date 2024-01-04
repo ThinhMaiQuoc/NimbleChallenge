@@ -32,3 +32,8 @@ NimbleChallengeFE is a React-based frontend application designed to interact wit
 - **SASS**: Used for styling the application.
 - **Axios**: For making HTTP requests to the backend.
 - **React Router**: For handling navigation within the application.
+
+## Environment Setup
+- **Node version**: 18.16.0
+- Run `npm install` to install all dependencies.
+- Run `npm start` to start the application in development mode.
