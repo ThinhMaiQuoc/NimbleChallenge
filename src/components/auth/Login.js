@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../assets/styles/Login.scss';
 import { validateCredentials } from '../../utils/validation';
 
@@ -65,6 +65,8 @@ const Login = () => {
                     onChange={handleInputChange}
                 />
                 <button type="submit">Login</button>
+
+                <Link className="button-style register-btn" to="/register">Register</Link>
                 {message && (
                     <div className={isError ? 'error-message' : 'success-message'}>
                         {message}
