@@ -1,15 +1,15 @@
-// src/index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom';
 import App from './App';
 import setupAxiosDefaults from './utils/axios';
 import './global.scss';
 
 setupAxiosDefaults();
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
